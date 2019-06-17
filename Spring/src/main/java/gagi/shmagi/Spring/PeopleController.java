@@ -7,33 +7,33 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class PersonController {
+public class PeopleController {
 
     @Autowired
-    PersonRepository personRepository;
+    PersonRepository people;
 
     @CrossOrigin
     @RequestMapping(
     method = RequestMethod.GET,
-    path = "/personen",
+    path = "/people",
     produces = MediaType.APPLICATION_JSON_VALUE
 
     )
     public List<Person> getAllPersons(){
-        return personRepository.findAll();
+        return people.findAll();
 
     }
 
     @CrossOrigin
     @RequestMapping(
     method = RequestMethod.POST,
-    path = "/personen",
+    path = "/people",
     produces = MediaType.APPLICATION_JSON_VALUE,
     consumes = MediaType.APPLICATION_JSON_VALUE
 
     )
     public Person addPerson(@RequestBody Person person) {
-        return personRepository.save(person);
+        return people.save(person);
 
     }
 

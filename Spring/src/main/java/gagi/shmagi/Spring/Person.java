@@ -3,6 +3,8 @@ package gagi.shmagi.Spring;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+import java.util.Date;
+
 @Entity
 @Table
 public class Person {
@@ -10,8 +12,6 @@ public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    @CreationTimestamp
     private Date createdAt;
 
     @NotNull
